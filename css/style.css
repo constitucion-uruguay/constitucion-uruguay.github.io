@@ -1,0 +1,15 @@
+.pre ins {
+  display: none;
+}
+
+.pre del {
+  text-decoration: none;
+}
+
+.post del {
+  display: none;
+}
+
+.post ins {
+  text-decoration: none;
+}
