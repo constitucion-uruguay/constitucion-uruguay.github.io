@@ -1,3 +1,78 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-size: 1.8rem;
+  line-height: 1.444;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  color: #585858;
+}
+
+nav {
+  background: #3e3e3e;
+  text-align: center;
+  padding: 1.8rem 0;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+}
+
+nav:hover {
+}
+
+nav a {
+  transition: background-color 0.5s ease;
+  background-color: #5a5a5a;
+  background: #3e3e3e;
+  border-radius: 0.5rem;
+  color: #707070;
+  text-decoration: none;
+  display: inline-block;
+  margin: 0 0.2rem;
+  padding: 0.1rem 0.4rem;
+}
+
+nav:hover a {
+  background: #2f2f2f;
+}
+
+nav:hover a:hover {
+  background: #9bc7de;
+}
+
+main {
+  padding: 2.4rem;
+  background-color: #fafafa;
+}
+
+h1 {
+  font-size: 4.8rem;
+}
+
+h1, h2, h3 {
+  font-family: 'Dosis', sans-serif;
+  text-align: center;
+}
+
+@media (min-width: 800px) {
+  body {
+    background: transparent url(../images/subtle_white_feathers.png) repeat;
+  }
+  nav, main {
+    width: 800px;
+    margin: 0 auto;
+    border-left: 1px solid #ebebeb;
+    border-right: 1px solid #ebebeb;
+  }
+}
+
 .pre ins {
   display: none;
 }
@@ -12,4 +87,17 @@
 
 .post ins {
   text-decoration: none;
+}
+
+.diff del {
+  text-decoration: none;
+  background-color: #ffd8d8;
+  border-radius: 0.5rem;
+  transition: display 0.5 ease;
+}
+
+.diff ins {
+  text-decoration: none;
+  background-color: #d8ffd8;
+  border-radius: 0.5rem;
 }
