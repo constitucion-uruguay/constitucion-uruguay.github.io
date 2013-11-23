@@ -17,6 +17,8 @@ $(function() {
       file_name, index, last_index = -1, url;
 
   function load_file() {
+    // TODO: Rethink all the reload state machine
+
     file_name = location.hash.substr(1) || "1830";
     index = files[file_name][0] || files["1830"][0];
     url = files[file_name][1] || files["1830"][1];
@@ -47,7 +49,7 @@ $(function() {
     } else {
       if ( index % 2 == 0 ) {
         $("main").attr("class", "diff");
-      } else if ( index < last_index ) {
+      } else if ( index < last_index || (index == 1 && last_index == 1) ) {
         $("main").attr("class", "pre");
       } else {
         $("main").attr("class", "post");
