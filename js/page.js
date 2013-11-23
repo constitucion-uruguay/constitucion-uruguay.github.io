@@ -23,6 +23,9 @@ $(function() {
     index = files[file_name][0] || files["1830"][0];
     url = files[file_name][1] || files["1830"][1];
 
+    $("a").removeClass("selected");
+    $("a[href='#" + file_name + "']").toggleClass("selected");
+
     function same_group(new_index, old_index) {
       return (
         (old_index >= 1 && old_index <= 3 && new_index >= 1 && new_index <= 3) ||

@@ -24,9 +24,6 @@ nav {
   font-weight: 300;
 }
 
-nav:hover {
-}
-
 nav a {
   transition: background-color 0.5s ease;
   background-color: #5a5a5a;
@@ -43,7 +40,7 @@ nav:hover a {
   background: #2f2f2f;
 }
 
-nav:hover a:hover {
+nav:hover a:hover, nav:hover a.selected, a.selected {
   background: #9bc7de;
 }
 
