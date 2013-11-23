@@ -1,11 +1,25 @@
 $(function() {
-  var last_index = 1;
+  var files = {
+        "1830": [1, "data/diff_1830_1918.html"],
+        "1918d": [2, "data/diff_1830_1918.html"],
+        "1918": [3, "data/diff_1830_1918.html"],
+        "1934d": [4, "data/diff_1918_1934.html"],
+        "1934": [5, "data/diff_1918_1934.html"],
+        "1942d": [6, "data/diff_1934_1942.html"],
+        "1942": [7, "data/diff_1934_1942.html"],
+        "1952d": [8, "data/diff_1942_1952.html"],
+        "1952": [9, "data/diff_1942_1952.html"],
+        "1967d": [10, "data/diff_1952_1967.html"],
+        "1967": [11, "data/diff_1952_1967.html"],
+        "2004d": [12, "data/diff_1967_2004.html"],
+        "2004": [13, "data/diff_1967_2004.html"],
+      },
+      file_name, index, last_index = -1, url;
 
-  $("main").attr("class", "pre");
-  $("main").load( "data/diff_1830_1918.html" );
-
-  $("a").click( function() {
-    var index = parseInt($(this).attr("data-index"));
+  function load_file() {
+    file_name = location.hash.substr(1) || "1830";
+    index = files[file_name][0] || files["1830"][0];
+    url = files[file_name][1] || files["1830"][1];
 
     function same_group(new_index, old_index) {
       return (
@@ -19,7 +33,7 @@ $(function() {
 
     if ( ! same_group(index, last_index) ) {
       // Load data
-      $("main").load( $(this).attr("data-load") );
+      $("main").load(url);
 
       if ( index % 2 == 0 ) {
         $("main").attr("class", "diff");
@@ -39,7 +53,12 @@ $(function() {
         $("main").attr("class", "post");
       }
     }
+  }
 
+  load_file();
+
+  $(window).bind("hashchange", function() {
+    load_file();
   });
 
 });
