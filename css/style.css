@@ -58,6 +58,10 @@ h1, h2, h3 {
   text-align: center;
 }
 
+#forkmeongithub {
+  display: none;
+}
+
 @media (min-width: 800px) {
   body {
     background: transparent url(../images/subtle_white_feathers.png) repeat;
@@ -67,6 +71,9 @@ h1, h2, h3 {
     margin: 0 auto;
     border-left: 1px solid #ebebeb;
     border-right: 1px solid #ebebeb;
+  }
+  #forkmeongithub {
+    display: block;
   }
 }
 
