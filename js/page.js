@@ -19,9 +19,9 @@ $(function() {
   function load_file() {
     // TODO: Rethink all the reload state machine
 
-    file_name = location.hash.substr(1); if ( !files[file_name] ) file_name = "1830";
-    index = files[file_name][0] || files["1830"][0];
-    url = files[file_name][1] || files["1830"][1];
+    file_name = location.hash.substr(1); if ( !files[file_name] ) file_name = "2004";
+    index = files[file_name][0] || files["2004"][0];
+    url = files[file_name][1] || files["2004"][1];
 
     $("a").removeClass("selected");
     $("a[href='#" + file_name + "']").toggleClass("selected");
